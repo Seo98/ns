@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: d0a9d505156c000439f4832d50c68d7f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 163380
+  packageName: Event Visualizer
+  packageVersion: 1.4.1
+  assetPath: Assets/EventVisualizer/Editor/EventsGraphGUI.cs
+  uploadId: 372567

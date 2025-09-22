@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 387c6d86b11d7d241a2da4a68b1dd9a5
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 163380
+  packageName: Event Visualizer
+  packageVersion: 1.4.1
+  assetPath: Assets/EventVisualizer/Editor/NodeGUI.cs
+  uploadId: 372567

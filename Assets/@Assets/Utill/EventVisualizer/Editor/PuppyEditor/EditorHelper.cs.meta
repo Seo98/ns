@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: df6a2a6945f2bdd459f360036853fb7f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 163380
+  packageName: Event Visualizer
+  packageVersion: 1.4.1
+  assetPath: Assets/EventVisualizer/Editor/PuppyEditor/EditorHelper.cs
+  uploadId: 372567

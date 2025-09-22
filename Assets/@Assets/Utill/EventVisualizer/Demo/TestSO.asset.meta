@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: cc983a93ea95dc6479e7fb676c693775
+timeCreated: 1530464343
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 163380
+  packageName: Event Visualizer
+  packageVersion: 1.4.1
+  assetPath: Assets/EventVisualizer/Demo/TestSO.asset
+  uploadId: 372567
