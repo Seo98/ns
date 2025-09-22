@@ -1,0 +1,3 @@
+To use post-processing with built-in shaders, please download the post processing pack 
+from unity asset registry and use the included profile that can be found inside the
+Metro_02_Profiles folder.
