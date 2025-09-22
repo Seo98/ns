@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d11b35bd166405041b412278364827a5
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 217086
+  packageName: Ghost Creature Anims
+  packageVersion: 1.2
+  assetPath: Assets/Ghost_Creature_Anims/Art/AnimationControllers/Ghost_Crawl_Back.controller
+  uploadId: 509295

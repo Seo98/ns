@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d6a88aa10f5a8944bae8388dbff1b63e
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 217086
+  packageName: Ghost Creature Anims
+  packageVersion: 1.2
+  assetPath: Assets/Ghost_Creature_Anims/Art/AnimationControllers/Ghost_Idle_CreepyHands_UnderBed_FranticReachLonger.controller
+  uploadId: 509295

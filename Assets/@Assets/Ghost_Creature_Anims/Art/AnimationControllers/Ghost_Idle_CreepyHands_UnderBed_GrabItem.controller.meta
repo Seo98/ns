@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2a9dacadae02cf24ba9a35e1afc9d7b5
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 217086
+  packageName: Ghost Creature Anims
+  packageVersion: 1.2
+  assetPath: Assets/Ghost_Creature_Anims/Art/AnimationControllers/Ghost_Idle_CreepyHands_UnderBed_GrabItem.controller
+  uploadId: 509295

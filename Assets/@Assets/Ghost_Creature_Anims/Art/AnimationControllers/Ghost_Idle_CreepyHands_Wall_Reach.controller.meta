@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 8f0d9a5342619d34a851581ec54aca36
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 217086
+  packageName: Ghost Creature Anims
+  packageVersion: 1.2
+  assetPath: Assets/Ghost_Creature_Anims/Art/AnimationControllers/Ghost_Idle_CreepyHands_Wall_Reach.controller
+  uploadId: 509295

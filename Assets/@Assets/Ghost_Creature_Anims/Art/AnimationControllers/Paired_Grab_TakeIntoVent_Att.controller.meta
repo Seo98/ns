@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c360b561301cc244cbe15fb071250853
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 217086
+  packageName: Ghost Creature Anims
+  packageVersion: 1.2
+  assetPath: Assets/Ghost_Creature_Anims/Art/AnimationControllers/Paired_Grab_TakeIntoVent_Att.controller
+  uploadId: 509295

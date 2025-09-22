@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a6d1c496df708e94aa1eef603a953276
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 217086
+  packageName: Ghost Creature Anims
+  packageVersion: 1.2
+  assetPath: Assets/Ghost_Creature_Anims/Art/AnimationControllers/Ghost_Dash_HandsDown_Forward.controller
+  uploadId: 509295

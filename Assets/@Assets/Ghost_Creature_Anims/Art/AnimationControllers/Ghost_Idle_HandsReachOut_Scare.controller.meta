@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 1d45e7083630d1c488dd9057331c2618
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 217086
+  packageName: Ghost Creature Anims
+  packageVersion: 1.2
+  assetPath: Assets/Ghost_Creature_Anims/Art/AnimationControllers/Ghost_Idle_HandsReachOut_Scare.controller
+  uploadId: 509295

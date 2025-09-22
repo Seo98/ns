@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3c4ef871ed0e4fb4680978f58fd699cc
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 217086
+  packageName: Ghost Creature Anims
+  packageVersion: 1.2
+  assetPath: Assets/Ghost_Creature_Anims/Art/AnimationControllers/Ghost_Idle_Victim_Possession.controller
+  uploadId: 509295

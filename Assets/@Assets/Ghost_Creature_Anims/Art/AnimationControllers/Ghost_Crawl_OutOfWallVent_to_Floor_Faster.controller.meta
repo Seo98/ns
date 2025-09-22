@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: daee762a8ca5be74893f2345c61ee169
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 217086
+  packageName: Ghost Creature Anims
+  packageVersion: 1.2
+  assetPath: Assets/Ghost_Creature_Anims/Art/AnimationControllers/Ghost_Crawl_OutOfWallVent_to_Floor_Faster.controller
+  uploadId: 509295

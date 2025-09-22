@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a5875f031f89c72438ed285dffb6a9b4
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 217086
+  packageName: Ghost Creature Anims
+  packageVersion: 1.2
+  assetPath: Assets/Ghost_Creature_Anims/Art/AnimationControllers/Ghost_Walk01_BackLeft.controller
+  uploadId: 509295

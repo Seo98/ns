@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 855b02a8fc6cfc142bc642530bb66590
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 217086
+  packageName: Ghost Creature Anims
+  packageVersion: 1.2
+  assetPath: Assets/Ghost_Creature_Anims/Art/AnimationControllers/Paired_Grab_FloatAway_5m_Att.controller
+  uploadId: 509295

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c76f094573eb5a94aaf26dad7c57d06b
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 217086
+  packageName: Ghost Creature Anims
+  packageVersion: 1.2
+  assetPath: Assets/Ghost_Creature_Anims/Art/AnimationControllers/Ghost_Crawl_OutOfWallVent_to_Floor_LowHeight.controller
+  uploadId: 509295

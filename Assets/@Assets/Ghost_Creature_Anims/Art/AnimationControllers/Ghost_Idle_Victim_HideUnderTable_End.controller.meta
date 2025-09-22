@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 5588d93566a5e7343a609974d816d5e0
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 217086
+  packageName: Ghost Creature Anims
+  packageVersion: 1.2
+  assetPath: Assets/Ghost_Creature_Anims/Art/AnimationControllers/Ghost_Idle_Victim_HideUnderTable_End.controller
+  uploadId: 509295

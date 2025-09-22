@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 784f673d0e2d5084196a7b84863fa85e
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 217086
+  packageName: Ghost Creature Anims
+  packageVersion: 1.2
+  assetPath: Assets/Ghost_Creature_Anims/Art/AnimationControllers/Ghost_Idle_Victim_DraggedByAnkles_25m_Loop.controller
+  uploadId: 509295

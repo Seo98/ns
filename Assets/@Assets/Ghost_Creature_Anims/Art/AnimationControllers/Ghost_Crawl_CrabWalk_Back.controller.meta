@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b2a23d1f4510e90408a57ef0bbf027f9
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 217086
+  packageName: Ghost Creature Anims
+  packageVersion: 1.2
+  assetPath: Assets/Ghost_Creature_Anims/Art/AnimationControllers/Ghost_Crawl_CrabWalk_Back.controller
+  uploadId: 509295
