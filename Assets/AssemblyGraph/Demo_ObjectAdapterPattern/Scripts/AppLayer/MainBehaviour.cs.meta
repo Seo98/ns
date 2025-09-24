@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: c90432252de184e48bfa7360f4368d9c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 275056
+  packageName: Assembly Graph (Free)
+  packageVersion: 1.0
+  assetPath: Assets/AssemblyGraph/Demo_ObjectAdapterPattern/Scripts/AppLayer/MainBehaviour.cs
+  uploadId: 639184

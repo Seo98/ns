@@ -19,6 +19,7 @@ public class ManualClassVisualizer : EditorWindow
         public string className;
         public List<string> publicMethods = new List<string>();
         public List<ReferenceInfo> references = new List<ReferenceInfo>();
+        public List<MethodCallInfo> methodCalls = new List<MethodCallInfo>();
         public Vector2 position;
         public Rect rect;
 
@@ -85,6 +86,47 @@ public class ManualClassVisualizer : EditorWindow
                     }
                 }
             }
+
+            // 메서드 호출 관계 분석 (간단 버전)
+            methodCalls.Clear();
+            string sourceCode = script.text;
+
+            foreach (var method in publicMethods)
+            {
+                string methodName = method.Split('(')[0]; // e.g. MovePlayer(int) → MovePlayer
+
+                int index = sourceCode.IndexOf(methodName + "(", StringComparison.Ordinal);
+                if (index < 0) continue;
+
+                int braceStart = sourceCode.IndexOf("{", index);
+                if (braceStart < 0) continue;
+
+                int braceDepth = 0;
+                int braceEnd = -1;
+                for (int i = braceStart; i < sourceCode.Length; i++)
+                {
+                    if (sourceCode[i] == '{') braceDepth++;
+                    else if (sourceCode[i] == '}') braceDepth--;
+                    if (braceDepth == 0) { braceEnd = i; break; }
+                }
+
+                if (braceEnd < 0) continue;
+                string methodBody = sourceCode.Substring(braceStart, braceEnd - braceStart);
+
+                foreach (var other in publicMethods)
+                {
+                    string otherName = other.Split('(')[0];
+                    if (otherName == methodName) continue;
+                    if (methodBody.Contains(otherName + "("))
+                    {
+                        methodCalls.Add(new MethodCallInfo
+                        {
+                            caller = methodName,
+                            callee = otherName
+                        });
+                    }
+                }
+            }
         }
     }
 
@@ -103,6 +145,12 @@ public class ManualClassVisualizer : EditorWindow
         Interface
     }
 
+    public class MethodCallInfo
+    {
+        public string caller;
+        public string callee;
+    }
+
     [MenuItem("Tools/Manual Class Visualizer")]
     static void Init()
     {
@@ -119,6 +167,12 @@ public class ManualClassVisualizer : EditorWindow
 
         // 참조선 먼저 그리기
         DrawReferences();
+
+        // 메서드 종속관계도 그리기
+        foreach (var scriptInfo in scripts)
+        {
+            DrawMethodDependencies(scriptInfo);
+        }
 
         // 스크립트 박스 그리기
         foreach (var scriptInfo in scripts)
@@ -162,11 +216,9 @@ public class ManualClassVisualizer : EditorWindow
 
     void DrawDropArea()
     {
-        // 드래그 앤 드롭 영역
         Rect dropArea = GUILayoutUtility.GetRect(0, 50, GUILayout.ExpandWidth(true));
         GUI.Box(dropArea, "여기에 MonoScript를 드래그하세요", EditorStyles.helpBox);
 
-        // 드래그 앤 드롭 처리
         Event evt = Event.current;
         switch (evt.type)
         {
@@ -195,7 +247,6 @@ public class ManualClassVisualizer : EditorWindow
 
     void AddScript(MonoScript monoScript)
     {
-        // 중복 확인
         foreach (var existingScript in scripts)
         {
             if (existingScript.script == monoScript)
@@ -205,7 +256,6 @@ public class ManualClassVisualizer : EditorWindow
             }
         }
 
-        // 유효한 MonoBehaviour인지 확인
         Type scriptType = monoScript.GetClass();
         if (scriptType != null && scriptType.IsSubclassOf(typeof(MonoBehaviour)))
         {
@@ -220,23 +270,19 @@ public class ManualClassVisualizer : EditorWindow
 
     void DrawScriptBox(ScriptInfo scriptInfo)
     {
-        // 박스 크기 계산
         int methodCount = scriptInfo.publicMethods.Count;
         int referenceCount = scriptInfo.references.Count;
         float height = 60 + (methodCount * 16) + (referenceCount * 16) + 20;
 
         scriptInfo.rect = new Rect(scriptInfo.position.x, scriptInfo.position.y, 220, height);
 
-        // 배경 - window 스타일 대신 helpBox 사용
         GUI.Box(scriptInfo.rect, "", EditorStyles.helpBox);
 
         float yOffset = 5;
 
-        // 헤더 (클래스명 + 제거 버튼)
         Rect headerRect = new Rect(scriptInfo.rect.x + 5, scriptInfo.rect.y + yOffset, scriptInfo.rect.width - 30, 20);
         EditorGUI.LabelField(headerRect, scriptInfo.className, EditorStyles.boldLabel);
 
-        // 제거 버튼
         Rect removeRect = new Rect(scriptInfo.rect.x + scriptInfo.rect.width - 25, scriptInfo.rect.y + yOffset, 20, 18);
         if (GUI.Button(removeRect, "×", EditorStyles.miniButton))
         {
@@ -245,12 +291,9 @@ public class ManualClassVisualizer : EditorWindow
         }
 
         yOffset += 25;
-
-        // 구분선
         EditorGUI.DrawRect(new Rect(scriptInfo.rect.x + 5, scriptInfo.rect.y + yOffset, scriptInfo.rect.width - 10, 1), Color.gray);
         yOffset += 5;
 
-        // 참조 섹션
         if (referenceCount > 0)
         {
             EditorGUI.LabelField(new Rect(scriptInfo.rect.x + 8, scriptInfo.rect.y + yOffset, 100, 15), "References:", EditorStyles.miniLabel);
@@ -266,11 +309,9 @@ public class ManualClassVisualizer : EditorWindow
                 GUI.color = Color.white;
                 yOffset += 16;
             }
-
             yOffset += 5;
         }
 
-        // 메서드 섹션
         if (methodCount > 0)
         {
             EditorGUI.LabelField(new Rect(scriptInfo.rect.x + 8, scriptInfo.rect.y + yOffset, 100, 15), "Public Methods:", EditorStyles.miniLabel);
@@ -293,26 +334,25 @@ public class ManualClassVisualizer : EditorWindow
 
             foreach (var reference in scriptInfo.references)
             {
-                // 참조 대상 스크립트 찾기
-                ScriptInfo targetScript = null;
-                foreach (var script in scripts)
-                {
-                    if (script.className == reference.targetType)
-                    {
-                        targetScript = script;
-                        break;
-                    }
-                }
-
+                ScriptInfo targetScript = scripts.FirstOrDefault(s => s.className == reference.targetType);
                 if (targetScript != null)
                 {
                     Vector2 endPos = new Vector2(targetScript.rect.x, targetScript.rect.y + targetScript.rect.height / 2);
-
-                    // 참조 타입에 따른 색상
                     Color lineColor = reference.referenceType == ReferenceType.Component ? Color.blue : Color.green;
                     DrawArrow(startPos, endPos, lineColor, reference.fieldName);
                 }
             }
+        }
+    }
+
+    void DrawMethodDependencies(ScriptInfo scriptInfo)
+    {
+        foreach (var call in scriptInfo.methodCalls)
+        {
+            Vector2 start = new Vector2(scriptInfo.rect.center.x, scriptInfo.rect.center.y);
+            Vector2 end = start + new Vector2(100, UnityEngine.Random.Range(-40, 40));
+
+            DrawArrow(start, end, Color.red, $"{call.caller} → {call.callee}");
         }
     }
 
@@ -321,12 +361,10 @@ public class ManualClassVisualizer : EditorWindow
         Handles.BeginGUI();
         Handles.color = color;
 
-        // 곡선 그리기
         Vector2 tangent = (end - start) * 0.5f;
         tangent.x = Mathf.Abs(tangent.x);
         Handles.DrawBezier(start, end, start + tangent, end - tangent, color, null, 2f);
 
-        // 화살표 머리
         Vector2 direction = (end - start).normalized;
         Vector2 arrowHead1 = end - direction * 12 + Vector2.Perpendicular(direction) * 6;
         Vector2 arrowHead2 = end - direction * 12 - Vector2.Perpendicular(direction) * 6;
@@ -334,9 +372,8 @@ public class ManualClassVisualizer : EditorWindow
         Handles.DrawLine(end, arrowHead1);
         Handles.DrawLine(end, arrowHead2);
 
-        // 레이블
         Vector2 midPoint = (start + end) * 0.5f;
-        Rect labelRect = new Rect(midPoint.x - 30, midPoint.y - 8, 60, 16);
+        Rect labelRect = new Rect(midPoint.x - 40, midPoint.y - 8, 80, 16);
         GUI.Label(labelRect, label, EditorStyles.miniLabel);
 
         Handles.EndGUI();
@@ -386,7 +423,6 @@ public class ManualClassVisualizer : EditorWindow
     {
         if (scripts.Count == 0) return;
 
-        // 간단한 그리드 레이아웃
         int columns = Mathf.CeilToInt(Mathf.Sqrt(scripts.Count));
         int rows = Mathf.CeilToInt((float)scripts.Count / columns);
 
@@ -397,7 +433,6 @@ public class ManualClassVisualizer : EditorWindow
         {
             int row = i / columns;
             int col = i % columns;
-
             scripts[i].position = startPos + new Vector2(col * spacing, row * (spacing * 0.8f));
         }
 

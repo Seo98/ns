@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: de9c4a4ec4e870345b2d6b8a90f5e4b1
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 275056
+  packageName: Assembly Graph (Free)
+  packageVersion: 1.0
+  assetPath: Assets/AssemblyGraph/Demo_ObjectAdapterPattern/Scripts/AppLayer/AppLayer.asmdef
+  uploadId: 639184

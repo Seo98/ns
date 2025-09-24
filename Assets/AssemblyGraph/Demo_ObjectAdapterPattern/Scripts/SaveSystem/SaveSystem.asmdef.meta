@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e5f84c99322d1ec4db27ba53e4ab8b58
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 275056
+  packageName: Assembly Graph (Free)
+  packageVersion: 1.0
+  assetPath: Assets/AssemblyGraph/Demo_ObjectAdapterPattern/Scripts/SaveSystem/SaveSystem.asmdef
+  uploadId: 639184

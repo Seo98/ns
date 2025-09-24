@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 7b4e39ba116bb12409aff538acb2ea15
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 275056
+  packageName: Assembly Graph (Free)
+  packageVersion: 1.0
+  assetPath: Assets/AssemblyGraph/Demo_ObjectAdapterPattern/Scripts/FakeBackend/FakeBackend.asmdef
+  uploadId: 639184

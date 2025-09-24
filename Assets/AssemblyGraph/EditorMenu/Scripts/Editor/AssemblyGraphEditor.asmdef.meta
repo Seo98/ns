@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 357e8dd527062bd419fdccfdfd8aa0be
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 275056
+  packageName: Assembly Graph (Free)
+  packageVersion: 1.0
+  assetPath: Assets/AssemblyGraph/EditorMenu/Scripts/Editor/AssemblyGraphEditor.asmdef
+  uploadId: 639184

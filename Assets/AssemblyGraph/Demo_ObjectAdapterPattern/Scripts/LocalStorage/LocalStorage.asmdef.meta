@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 0ac0c8ffe4062ca4f91cd7095beaa0d0
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 275056
+  packageName: Assembly Graph (Free)
+  packageVersion: 1.0
+  assetPath: Assets/AssemblyGraph/Demo_ObjectAdapterPattern/Scripts/LocalStorage/LocalStorage.asmdef
+  uploadId: 639184

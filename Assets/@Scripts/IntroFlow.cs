@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.UI;
 
 enum IntroState
 {
@@ -21,10 +22,13 @@ public class IntroFlow : MonoBehaviour
     [SerializeField] private ControllerTransitionManager transitionManager;
 
     [Header("UI")]
+    [SerializeField] private GameObject UI;
     [SerializeField] private GameObject ingameUI;
     [SerializeField] private GameObject sleepUI;
     [SerializeField] private TextMeshProUGUI storyText;
     [SerializeField] private FadeOut fadeController;
+    [SerializeField] private Sprite[] introImage;
+    [SerializeField] private GameObject introImageShow;
 
     [Header("환경 오브젝트")]
     [SerializeField] private GameObject npcParent; // NPC들의 부모 오브젝트
@@ -77,14 +81,22 @@ public class IntroFlow : MonoBehaviour
         if (textIndex == 1)
         {
             ShowText("야근을 마치고 나온 지하철은 한산했다.");
+            introImageShow.GetComponent<Image>().sprite = introImage[0];
+            introImageShow.GetComponent<Image>().color = Color.white;
+            fadeController.Blink();
         }
         else if (textIndex == 2)
         {
             ShowText("막차에 가까운 열차, 몇 안 되는 조용한 승객들..");
+            introImageShow.GetComponent<Image>().sprite = introImage[1];
+            fadeController.Blink();
         }
         else if (textIndex == 3)
         {
             ShowText("나는 구석진 자리에 몸을 맡기고 눈을 깜빡이며, 졸고있었다.");
+            introImageShow.GetComponent<Image>().sprite = introImage[2];
+            fadeController.Blink();
+            introImageShow.SetActive(false);
         }
         else if (textIndex == 4)
         {
