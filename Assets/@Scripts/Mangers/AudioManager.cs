@@ -1,16 +1,14 @@
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour
+public class AudioManager : Singleton<AudioManager>
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] private AudioSource bgmSource;
+    [SerializeField] private AudioSource sfxSource;
+    [SerializeField] private AudioSource introSource;
+    [SerializeField] private AudioSource informationSource;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField] private AudioClip bgmCrip;
+    [SerializeField] private AudioClip sfxCrip;
+    [SerializeField] private AudioClip introCrip;
+    [SerializeField] private AudioClip informationCrip;
 }

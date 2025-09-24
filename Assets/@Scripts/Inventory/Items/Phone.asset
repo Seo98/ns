@@ -19,5 +19,5 @@ MonoBehaviour:
   maxStackSize: 0
   hasItem: 1
   canUseItem: 1
-  isUsingItem: 1
+  isUsingItem: 0
   isEnergyEnough: 0

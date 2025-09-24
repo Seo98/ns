@@ -46,7 +46,7 @@ namespace FpsHorrorKit
         private FpsAssetsInputs _input;
 
         private Vector3 velocity;
-        private bool isGrounded;
+        public bool IsGrounded { get; private set; }
         private float jumpCooldownTimer;
         private float cameraPitch;
 
@@ -124,12 +124,12 @@ namespace FpsHorrorKit
         {
             // set sphere position, with offset
             Vector3 spherePosition = new Vector3(transform.position.x, transform.position.y - groundedOffset, transform.position.z);
-            isGrounded = Physics.CheckSphere(spherePosition, groundedRadius, groundLayers, QueryTriggerInteraction.Ignore);
+            IsGrounded = Physics.CheckSphere(spherePosition, groundedRadius, groundLayers, QueryTriggerInteraction.Ignore);
         }
 
         private void HandleGravity()
         {
-            if (isGrounded && velocity.y < 0)
+            if (IsGrounded && velocity.y < 0)
             {
                 velocity.y = -2f;
             }
@@ -144,7 +144,7 @@ namespace FpsHorrorKit
                 jumpCooldownTimer -= Time.deltaTime;
             }
 
-            if (isGrounded)
+            if (IsGrounded)
             {
                 if (_input.jump && jumpCooldownTimer <= 0)
                 {
@@ -172,7 +172,7 @@ namespace FpsHorrorKit
             Color transparentGreen = new Color(0.0f, 1.0f, 0.0f, 0.35f);
             Color transparentRed = new Color(1.0f, 0.0f, 0.0f, 0.35f);
 
-            if (isGrounded) Gizmos.color = transparentGreen;
+            if (IsGrounded) Gizmos.color = transparentGreen;
             else Gizmos.color = transparentRed;
 
             // when selected, draw a gizmo in the position of, and matching radius of, the grounded collider

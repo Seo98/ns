@@ -15,8 +15,8 @@ public class IntroPlayerController : MonoBehaviour
     [SerializeField] float yawOffset = -90f;
 
     [Header("Sit/Stand Settings")]
-    [SerializeField] float sitHeight = 0.8f;   // 앉아 있을 때 카메라 y 위치
-    [SerializeField] float standHeight = 1.6f; // 일어서 있을 때 카메라 y 위치
+    [SerializeField] float sitHeight = 0.5f;   // 앉아 있을 때 카메라 y 위치
+    [SerializeField] float standHeight = 1.4f; // 일어서 있을 때 카메라 y 위치
     [SerializeField] float transitionSpeed = 2f; // 보간 속도
 
     private float yaw;
@@ -68,4 +68,9 @@ public class IntroPlayerController : MonoBehaviour
         pos.y = h;
         camTransform.localPosition = pos;
     }
+
+
+
+    public float GetCurrentPitch() => pitch;
+    public float GetCurrentYaw() => yaw - yawOffset; // Offset 제거한 실제 Yaw
 }
